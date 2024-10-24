@@ -1,5 +1,4 @@
-# HiCat
-HiCat: A Semi-Supervised Approach for Cell Type Annotation
+# HiCat: A Semi-Supervised Approach for Cell Type Annotation
 
 ![Graphical Abstract](graphicAbstract.png)
 
