@@ -12,4 +12,4 @@ A complete package is working in progress. To run this demo, first download the 
 python script/run.py
 ```
 
-the results would be generated in the outputs folder. Once the result is generated, walkThough.ipynb can be used to inspect the result.
+the results would be generated in the outputs folder. Once the result is generated, walkThough.ipynb can be used to inspect the results.
