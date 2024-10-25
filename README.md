@@ -12,3 +12,6 @@ python script/run.py
 ```
 
 the results would be generated in the outputs folder. Once the result is generated, walkThough.ipynb can be used to inspect the results.
+
+Data for experiment 3 of the paper can be download from:
+[Link Text](https://drive.google.com/drive/folders/1gjBLkGrORXKwmiRdb860viwZK3mOIrcn?usp=sharing)
