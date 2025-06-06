@@ -9,7 +9,6 @@ if platform.system() == 'Windows':
 else:
     r_home = subprocess.check_output(['R', 'RHOME'], universal_newlines=True).strip()
 
-
 # Get R binary path
 r_path = os.path.join(r_home, 'bin')
 
@@ -30,7 +29,9 @@ import seaborn as sns
 # %%
 import pyreadr
 import rpy2.robjects as robjects
-from rpy2.robjects import pandas2ri
+import rpy2.robjects.pandas2ri as pandas2ri
+from rpy2.robjects import pandas2ri, default_converter
+from rpy2.robjects.conversion import localconverter
 from rpy2.robjects.packages import importr
 
 # %%
@@ -98,7 +99,7 @@ if not os.path.exists(output_path):
 
 # %%
 # Activate automatic conversion between R and pandas DataFrames
-pandas2ri.activate()
+# pandas2ri.activate()
 
 # Import required R libraries
 base = importr('base')
@@ -128,8 +129,11 @@ except Exception as e:
     raise
 
 # Convert R data frames to pandas DataFrames
-train_df = pandas2ri.rpy2py(harmony_result[0])
-test_df = pandas2ri.rpy2py(harmony_result[1])
+with localconverter(default_converter + pandas2ri.converter):
+    train_df = robjects.conversion.rpy2py(harmony_result[0])
+    test_df = robjects.conversion.rpy2py(harmony_result[1])
+# train_df = pandas2ri.rpy2py(harmony_result[0])
+# test_df = pandas2ri.rpy2py(harmony_result[1])
 
 train_df["cellType"] = pyreadr.read_r(train_path)[None]["yy"].values
 train_df["train"] = True
