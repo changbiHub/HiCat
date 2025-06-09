@@ -9,7 +9,7 @@ Accurate cell type annotation is crucial for understanding cellular heterogeneit
 
 Our comprehensive benchmarking shows that HiCat consistently outperforms existing methods, particularly in its ability to distinguish and identify multiple novel cell types, including rare populations.
 
-![HiCat Workflow](Figure1.png)
+![HiCat Workflow](graphicAbstract.png)
 *Fig 1. The HiCat workflow, from data input and feature engineering to classification and final prediction.*
 
 ---
